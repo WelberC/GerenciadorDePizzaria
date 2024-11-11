@@ -26,7 +26,7 @@ public class Pedido {
     private Long id;
 
     @ManyToOne
-    @JoinColumn(name = "id")
+    @JoinColumn(name = "comprador_id")
     private Usuario comprador;  
 
     @OneToMany(mappedBy = "pedido")
