@@ -15,9 +15,17 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 @Entity
 @Table(name = "tb_usuarios")
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
 public class Usuario {
    
     @Id
@@ -27,6 +35,9 @@ public class Usuario {
     @Column(unique = true)
     private String email;
 
+    @Column
+    private String celular;
+
     @Enumerated(EnumType.STRING)
     private Cargo cargo;
 
@@ -35,6 +46,9 @@ public class Usuario {
 
     @Column
     private String endereco;
+
+    @Column
+    private String urlFotoPerfil;
 
     @Column
     private String CEP;
@@ -50,5 +64,10 @@ public class Usuario {
     @Column
     private LocalDateTime dataAlteracao;
     
+    @UpdateTimestamp
+    private LocalDateTime dataUltimaCompra;
+
+    @Column
+    private Boolean estaAtivo;
     
 }
