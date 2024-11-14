@@ -58,4 +58,6 @@ public class Produto {
     @Column
     private LocalDateTime dataAlteracao;
 
+    @Column
+    private Boolean estaAtivo= true;
 }
